@@ -11,36 +11,43 @@
 <body>
     <div class="box">
         <div class="display">
+            <div class="stored">
+                <div class="numOne"></div>
+                <div class="operator"></div>
+                <div class="numTwo"></div>
+            </div>
+            <div class="activeNum">
 
+            </div>
         </div>
         <div class="buttons">
             <div class="rowZero">
                 <button class="keypad" id="allClear">AC</button>
-                <button class="keypad" id="clear">C</button>
+                <button class="keypad" id="backspace">&#9003</button>
             </div>
             <div class="rowOne">
                 <button class="keypad numButton" id="one">1</button>
                 <button class="keypad numButton" id="two">2</button>
                 <button class="keypad numButton" id="three">3</button>
-                <button class="keypad" id="divide">&#247</button>
+                <button class="keypad operator" id="divide">&#247</button>
             </div>
             <div class="rowTwo">
                 <button class="keypad numButton" id="four">4</button>
                 <button class="keypad numButton" id="five">5</button>
                 <button class="keypad numButton" id="six">6</button>
-                <button class="keypad" id="multiply">x</button>
+                <button class="keypad operator" id="multiply">x</button>
             </div>
             <div class="rowThree">
                 <button class="keypad numButton" id="seven">7</button>
                 <button class="keypad numButton" id="eight">8</button>
                 <button class="keypad numButton" id="nine">9</button>
-                <button class="keypad" id="subtract">-</button>
+                <button class="keypad operator" id="subtract">-</button>
             </div>
             <div class="rowFour">
                 <button class="keypad numButton" id="zero">0</button>
-                <button class="keypad numButton" id="decimal">.</button>
+                <button class="keypad" id="decimal">.</button>
                 <button class="keypad" id="equal">=</button>
-                <button class="keypad" id="add">+</button>
+                <button class="keypad operator" id="add">+</button>
             </div>
         </div>
     </div>

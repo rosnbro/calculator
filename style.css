@@ -1,32 +1,68 @@
 body {
     width: 100%;
-    background-color: darkseagreen;
+    background-color: #fcf9d7;
 }
 
 .box {
-    width: 50%;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
     margin: 0 auto;
+    padding: 50px 0;
+    background-color: #a4b6bc;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #3a3d62;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+    text-align: right;
+    height: 150px;
+    width: 450px;
+    margin: 0 auto 20px;
+    padding: auto 10px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #3a3d62;
+    background-color: white;
 }
 
 .stored {
     display: flex;
+    height: 75px;
+    width: auto;
+    padding: 10px 0 0;
 }
 
 .topNum {
-    height: 50px;
-    width: 100px;
-    font-size: 2rem;
-    background-color: gray;
+    padding: 0 5px;
+    font-size: 2.5rem;
+    text-align: right;
 }
 
 #activeNum {
-    height: 50px;
-    width: 100px;
-    font-size: 2rem;
-    background-color: thistle;
+    height: 75px;
+    font-size: 3rem;
+    text-align: right;
+}
+
+.row {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .keypad {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    margin: 5px;
+    background-color: #a4b6bc;
+    font-size: 1.75rem;
+    color: white;
 }

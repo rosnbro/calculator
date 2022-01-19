@@ -40,6 +40,7 @@ numButtons.forEach((numButton) => {
 
 opButtons.forEach((opButton) => {
     opButton.addEventListener("click", () => {
+        if (num2 == null && num1 != null) calculate();
         operator = opButton.id;
         assignNumber();
     });
@@ -59,27 +60,20 @@ signButton.addEventListener("click", () => {
 });
 
 equalButton.addEventListener("click", () => {
-    if (num1 != null && displayValue != "") calculate(num1, displayValue);
+    if (num1 != null && displayValue != "") calculate();
 });
 
 allClearButton.addEventListener("click", () => clearAll());
 
 backButton.addEventListener("click", () => backSpace(displayValue));
 
-
-
-// Add ability to use shift+num operators when typed
+// Default display
 
 display(displayValue, num1, num2, operator);
 
 // Functions
 
 function display(active, num1, num2, operator) {
-    //if (active === null) activeNumDispaly.innerHTML = "";
-    //if (num1 === null) numOneDisplay.innerHTML = "";
-    //if (num2 === null) numTwoDisplay.innerHTML = "";
-    //if (operator === null) operatorDisplay.innerHTML = "";
-
     let operatorSymbol;
 
     switch (operator) {
@@ -98,6 +92,21 @@ function display(active, num1, num2, operator) {
         case "pow":
             operatorSymbol = "^";
             break;
+        case "squareRoot":
+            operatorSymbol = "&#8730(&#8592)";
+            break;
+        case "factorial":
+            operatorSymbol = "!";
+            break;
+        case "commonLog":
+            operatorSymbol = "log(&#8592)";
+            break;
+        case "naturalLog":
+            operatorSymbol = "ln(&#8592)";
+            break;
+        case "exponent":
+            operatorSymbol = "e^(&#8592)";
+            break;
         case null:
             operatorSymbol = null;
             break;
@@ -110,14 +119,29 @@ function display(active, num1, num2, operator) {
 }
 
 function assignNumber() {
-    if (num2 != null) num2 = null;
-    if (displayValue == "") {
-        display(displayValue, num1, num2, operator);
-    } else {
+    if (displayValue != "") {
         num1 = parseFloat(displayValue);
         displayValue = "";
-        display(displayValue, num1, num2, operator);
     }
+    if (num2 != null) num2 = null;
+    switch (operator) {                         // Single number operations
+        case "squareRoot":
+            displayValue = squareRoot();
+            break;
+        case "factorial":
+            displayValue = factorial();
+            break;
+        case "commonLog":
+            displayValue = commonLog();
+            break;
+        case "naturalLog":
+            displayValue = naturalLog();
+            break;
+        case "exponent":
+            displayValue = exponent();
+            break;
+    }
+    display(displayValue, num1, num2, operator);
 }
 
 function backSpace(value) {
@@ -178,20 +202,31 @@ function power(num2) {
 }
 
 function squareRoot() {
-
+    if (num1 > 0) {
+        return Math.sqrt(num1);
+    } else return "use your imagination.";
 }
 
 function factorial() {
-
+    let a = 1;
+    if (num1 == 0 || num1 == 1) {
+        return a;
+    } else {
+        for (let i = num1; i > 0; i--) {
+            a *= i;
+        }
+        return a;
+    }
 }
 
-
-
 function naturalLog() {
-
+    return Math.log(num1);
 }
 
 function commonLog() {
-
+    return Math.log10(num1);
 }
 
+function exponent() {
+    return Math.exp(num1);
+}

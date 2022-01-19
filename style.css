@@ -6,10 +6,10 @@ body {
 .box {
     align-items: center;
     justify-content: center;
-    width: 600px;
-    margin: 0 auto;
-    padding: 50px 0;
-    background-color: #a4b6bc;
+    width: 500px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background-color: #ef9895;
     border-radius: 16px;
     border-style: solid;
     border-color: #3a3d62;
@@ -18,23 +18,26 @@ body {
 .display {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: right;
+    align-items: flex-end;
+    align-content: stretch;
+    justify-content: center;
     text-align: right;
-    height: 150px;
-    width: 450px;
+    width: 400px;
     margin: 0 auto 20px;
-    padding: auto 10px;
+    padding: 0 25px;
     border-radius: 8px;
     border-style: solid;
     border-color: #3a3d62;
     background-color: white;
+    color: #3a3d62;
 }
 
 .stored {
     display: flex;
-    height: 75px;
-    width: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-height: 75px;
+    max-width: 400px;
     padding: 10px 0 0;
 }
 
@@ -42,12 +45,15 @@ body {
     padding: 0 5px;
     font-size: 2.5rem;
     text-align: right;
+    overflow-wrap: break-word;
 }
 
 #activeNum {
-    height: 75px;
+    min-height: 75px;
+    max-width: 400px;
     font-size: 3rem;
     text-align: right;
+    overflow-wrap: break-word;
 }
 
 .row {
@@ -60,9 +66,9 @@ body {
 .keypad {
     width: 80px;
     height: 80px;
-    border-radius: 100%;
+    border-radius: 8px;
     margin: 5px;
-    background-color: #a4b6bc;
+    background-color: #ef9895;
     font-size: 1.75rem;
     color: white;
 }

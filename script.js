@@ -75,6 +75,7 @@ display(displayValue, num1, num2, operator);
 
 function display(active, num1, num2, operator) {
     let operatorSymbol;
+    let numOne = null;
 
     switch (operator) {
         case "add":
@@ -111,7 +112,7 @@ function display(active, num1, num2, operator) {
             operatorSymbol = null;
             break;
     }
-
+    
     activeNumDispaly.innerHTML = active;
     numOneDisplay.innerHTML = num1;
     numTwoDisplay.innerHTML = num2;
@@ -204,7 +205,7 @@ function power(num2) {
 function squareRoot() {
     if (num1 > 0) {
         return Math.sqrt(num1);
-    } else return "use your imagination.";
+    } else return "use your imagination";
 }
 
 function factorial() {
